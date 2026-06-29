@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banzsweb React</title>
+    <script type="module" crossorigin src="./assets/index-CXLcsIQk.js?v=20260628modulessidebar"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-ByGJiOLX.css?v=20260628pnrrestore">
+    <link rel="stylesheet" href="./doubt-terminal.css?v=20260621f">
+    
+<style id="asic-flow-session-style">
+  .asic-flow-session { width: min(1680px, calc(100% - 28px)); margin: 24px auto 56px; color: #fff7e8; }
+  .asic-flow-session-head { border: 1px solid rgba(255, 214, 100, .30); border-radius: 28px; padding: clamp(22px, 3vw, 44px); background: radial-gradient(circle at 20% 0%, rgba(255, 214, 100, .16), transparent 42%), linear-gradient(145deg, #24211b 0%, #15120d 70%, #090805 100%); box-shadow: 0 22px 70px rgba(214,157,28,.12); }
+  .asic-flow-session-head h1 { margin: 8px 0 12px; font-size: clamp(44px, 7vw, 96px); line-height: .95; letter-spacing: 0; color: #fff7e8; text-shadow: 0 0 26px rgba(255, 214, 100, .20); }
+  .asic-flow-session-head p:not(.eyebrow) { max-width: 1100px; color: #d7cdbc; font-size: clamp(18px, 2vw, 28px); line-height: 1.45; }
+  .asic-flow-session .eyebrow { color: #ffe58d !important; }
+  .asic-flow-stage-tabs { display: flex; gap: 12px; overflow-x: auto; padding: 18px 0 4px; scrollbar-width: thin; }
+  .asic-flow-stage-tabs span { flex: 0 0 auto; border: 1px solid rgba(255,214,100,.36); border-radius: 999px; padding: 12px 18px; color: #ffe58d; font-weight: 900; background: rgba(255,214,100,.06); }
+  .asic-flow-pages { display: grid; gap: 22px; margin-top: 22px; }
+  .asic-flow-page { margin: 0; padding: clamp(10px, 1.4vw, 20px); border: 1px solid rgba(255,214,100,.26); border-radius: 24px; background: linear-gradient(145deg, rgba(26,23,17,.95), rgba(8,7,5,.96)); box-shadow: 0 18px 54px rgba(0,0,0,.34); }
+  .asic-flow-page figcaption { color: #ffe58d; font-weight: 900; margin: 0 0 10px; letter-spacing: 0; }
+  .asic-flow-page img { display: block; width: 100%; max-width: 1180px; height: auto; margin: 0 auto; border-radius: 14px; background: #090805; box-shadow: 0 12px 34px rgba(0,0,0,.28); }
+  @media (max-width: 760px) { .asic-flow-session { width: calc(100% - 16px); } .asic-flow-page { border-radius: 16px; } .asic-flow-page img { border-radius: 10px; } }
+</style>
+<style id="flow-choice-style">
+  .asic-flow-choice-head { width: min(960px, 100%); margin: 34px auto 26px; padding: clamp(24px, 4vw, 48px); border: 1px solid rgba(255, 214, 100, .30); border-radius: 30px; background: radial-gradient(circle at 50% 0%, rgba(255, 214, 100, .16), transparent 45%), linear-gradient(145deg, #24211b 0%, #15120d 58%, #090805 100%); text-align: center; box-shadow: 0 24px 90px rgba(218, 157, 28, .16); }
+  .asic-flow-choice-head .eyebrow { color: #ffe58d !important; }
+  .asic-flow-choice-head h1 { margin: 8px 0 24px; font-size: clamp(44px, 7vw, 88px); line-height: .95; color: #fff7e8; text-shadow: 0 0 26px rgba(255, 214, 100, .20); }
+  .flow-choice-buttons { display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: 18px; }
+  .flow-choice-buttons button { min-height: 86px; border-radius: 999px; border: 1px solid rgba(255, 214, 100, .40); background: rgba(28, 25, 19, .94); color: #f5dec0; font-size: clamp(24px, 3vw, 38px); font-weight: 950; cursor: pointer; box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 36px rgba(0,0,0,.32); }
+  .flow-choice-buttons button:hover, .flow-choice-buttons button.is-active { color: #070604; background: linear-gradient(135deg, #ffe37a, #f4bf31 52%, #d59116); border-color: rgba(255,255,255,.75); transform: translateY(-1px); box-shadow: 0 18px 42px rgba(214, 157, 28, .30); }
+  .asic-flow-session-head.compact { margin-top: 18px; }
+  .asic-flow-session-head.compact h2 { margin: 8px 0 10px; font-size: clamp(34px, 5vw, 64px); color: #fff7e8; }
+  .asic-flow-session-head.compact p { color: #d7cdbc !important; }
+  @media (max-width: 680px) { .flow-choice-buttons { grid-template-columns: 1fr; } .flow-choice-buttons button { min-height: 72px; } }
+</style>
+
+  
+<style id="hide-functional-flow-section">
+  .pipeline-section { display: none !important; }
+</style>
+  
+
+  
+<style id="modules-pdf-style">
+  .modules-pdf-section { width: min(1680px, calc(100% - 28px)); margin: 24px auto 56px; color: #fff7e8; }
+  .modules-pdf-head { border: 1px solid rgba(255,214,100,.30); border-radius: 28px; padding: clamp(22px,3vw,44px); background: radial-gradient(circle at 20% 0%, rgba(255,214,100,.16), transparent 42%), linear-gradient(145deg,#24211b 0%,#15120d 70%,#090805 100%); box-shadow: 0 22px 70px rgba(214,157,28,.12); }
+  .modules-pdf-head h2 { margin: 8px 0 12px; font-size: clamp(36px,5vw,72px); line-height: 1; color: #fff7e8; }
+  .modules-pdf-head p:not(.eyebrow) { color: #d7cdbc; font-size: clamp(18px,2vw,28px); line-height: 1.45; max-width: 1100px; }
+  .modules-pdf-pages { display: grid; gap: 22px; margin-top: 22px; }
+  .modules-pdf-page { margin: 0; padding: clamp(10px,1.4vw,20px); border: 1px solid rgba(255,214,100,.26); border-radius: 24px; background: linear-gradient(145deg,rgba(26,23,17,.95),rgba(8,7,5,.96)); box-shadow: 0 18px 54px rgba(0,0,0,.34); }
+  .modules-pdf-page figcaption { color: #ffe58d; font-weight: 900; margin: 0 0 10px; }
+  .modules-pdf-page img { display: block; width: 100%; max-width: 1180px; height: auto; margin: 0 auto; border-radius: 14px; background: #090805; box-shadow: 0 12px 34px rgba(0,0,0,.28); }
+  @media (max-width:760px){ .modules-pdf-section{width:calc(100% - 16px)} .modules-pdf-page{border-radius:16px} .modules-pdf-page img{border-radius:10px} }
+</style>
+  
+<style id="modules-sidebar-style">
+  .modules-with-sidebar { width: min(1760px, calc(100% - 28px)); }
+  .modules-reader { display: grid; grid-template-columns: minmax(280px, 420px) minmax(0, 1fr); gap: 20px; margin-top: 22px; align-items: start; }
+  .modules-sidebar { position: sticky; top: 110px; max-height: calc(100vh - 130px); overflow: auto; display: grid; gap: 10px; padding: 12px; border: 1px solid rgba(255,214,100,.26); border-radius: 24px; background: linear-gradient(145deg,rgba(26,23,17,.96),rgba(8,7,5,.98)); box-shadow: 0 18px 54px rgba(0,0,0,.32); }
+  .modules-sidebar button { text-align: left; border: 1px solid rgba(255,214,100,.20); border-radius: 16px; background: rgba(255,255,255,.025); color: #fff7e8; padding: 14px; cursor: pointer; }
+  .modules-sidebar button:hover, .modules-sidebar button.is-active { background: linear-gradient(135deg,#ffe37a,#f4bf31 52%,#d59116); color: #070604; border-color: rgba(255,255,255,.72); }
+  .modules-sidebar button span { display: block; font-size: 12px; font-weight: 950; color: #ffe58d; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .08em; }
+  .modules-sidebar button:hover span, .modules-sidebar button.is-active span { color: #070604; }
+  .modules-sidebar button strong { display: block; font-size: 16px; line-height: 1.25; }
+  .modules-selected-page { min-width: 0; }
+  .modules-selected-title { border: 1px solid rgba(255,214,100,.24); border-radius: 22px; padding: 20px; margin-bottom: 16px; background: linear-gradient(145deg,rgba(26,23,17,.95),rgba(8,7,5,.96)); }
+  .modules-selected-title h3 { margin: 0; font-size: clamp(28px,3vw,46px); color: #fff7e8; }
+  .modules-selected-page .modules-pdf-page { margin: 0; }
+  @media (max-width: 980px) { .modules-reader { grid-template-columns: 1fr; } .modules-sidebar { position: relative; top: auto; max-height: 360px; } }
+</style>
+  
+<style id="modules-sidebar-size-override">
+  .modules-with-sidebar { width: min(1900px, calc(100% - 24px)) !important; }
+  .modules-reader { grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) !important; gap: 14px !important; }
+  .modules-sidebar { padding: 8px !important; gap: 7px !important; border-radius: 18px !important; }
+  .modules-sidebar button { padding: 9px 10px !important; border-radius: 12px !important; }
+  .modules-sidebar button span { font-size: 10px !important; margin-bottom: 4px !important; letter-spacing: .12em !important; }
+  .modules-sidebar button strong { font-size: 13px !important; line-height: 1.18 !important; }
+  .modules-selected-title { padding: 14px 18px !important; border-radius: 18px !important; margin-bottom: 12px !important; }
+  .modules-selected-title h3 { font-size: clamp(26px, 2.4vw, 42px) !important; }
+  .modules-selected-page .modules-pdf-page { padding: 12px !important; }
+  .modules-selected-page .modules-pdf-page img { max-width: 1380px !important; width: 100% !important; }
+  @media (max-width: 980px) { .modules-reader { grid-template-columns: 1fr !important; } .modules-sidebar { max-height: 300px !important; } }
+</style>
+  
+<style id="modules-page-clarity-fix">
+  .modules-with-sidebar { width: min(1760px, calc(100% - 20px)) !important; }
+  .modules-reader { grid-template-columns: minmax(180px, 240px) minmax(0, 1fr) !important; gap: 16px !important; }
+  .modules-selected-page { padding: 0 10px 18px 0 !important; }
+  .modules-selected-page .modules-pdf-page {
+    padding: 18px !important;
+    overflow: visible !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    background: linear-gradient(145deg, rgba(18,15,10,.96), rgba(5,4,3,.98)) !important;
+  }
+  .modules-selected-page .modules-pdf-page img {
+    width: min(100%, 980px) !important;
+    max-width: 980px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    margin: 0 auto !important;
+  }
+  .module-circuit-diagram {
+    max-width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .modules-selected-title {
+    max-width: 980px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  @media (min-width: 1500px) {
+    .modules-selected-page .modules-pdf-page img { width: min(100%, 1060px) !important; max-width: 1060px !important; }
+    .module-circuit-diagram, .modules-selected-title { max-width: 1060px !important; }
+  }
+  @media (max-width: 980px) {
+    .modules-reader { grid-template-columns: 1fr !important; }
+    .modules-selected-page { max-height: none !important; overflow: visible !important; padding-right: 0 !important; }
+    .modules-selected-page .modules-pdf-page { padding: 10px !important; }
+    .modules-selected-page .modules-pdf-page img { width: 100% !important; max-width: 100% !important; }
+  }
+</style>
+  
+<style id="all-pdf-pages-clarity-fix">
+  .asic-flow-session,
+  .modules-pdf-section,
+  .modules-pdf-layout,
+  .modules-selected-page,
+  .asic-flow-pages,
+  .pnr-flow-pages,
+  .modules-pdf-pages {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  .asic-flow-pages,
+  .pnr-flow-pages,
+  .modules-pdf-pages {
+    justify-items: center !important;
+    align-items: start !important;
+  }
+  .asic-flow-page,
+  .pnr-flow-page,
+  .modules-pdf-page,
+  .page,
+  .modules-selected-page .modules-pdf-page {
+    box-sizing: border-box !important;
+    width: min(100%, 1120px) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    padding: clamp(8px, 1vw, 14px) !important;
+  }
+  .asic-flow-page img,
+  .pnr-flow-page img,
+  .modules-pdf-page img,
+  .page img,
+  .modules-selected-page .modules-pdf-page img {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: top center !important;
+    margin: 0 auto !important;
+  }
+  .modules-selected-page {
+    padding-right: 18px !important;
+  }
+  @media (min-width: 1500px) {
+    .asic-flow-page,
+    .pnr-flow-page,
+    .modules-pdf-page,
+    .page,
+    .modules-selected-page .modules-pdf-page {
+      width: min(100%, 1220px) !important;
+    }
+  }
+  @media (max-width: 900px) {
+    .modules-pdf-layout {
+      grid-template-columns: 1fr !important;
+    }
+    .modules-pdf-sidebar {
+      max-height: 42vh !important;
+    }
+    .modules-selected-page {
+      padding-right: 0 !important;
+    }
+  }
+</style>
+  <style id="modules-full-document-scroll-style">
+  .modules-full-document .modules-reader {
+    align-items: start !important;
+  }
+  .modules-full-document .modules-selected-page,
+  .modules-full-document .modules-all-pages {
+    max-height: none !important;
+    overflow: visible !important;
+    padding-right: 10px !important;
+  }
+  .modules-full-document .modules-pdf-pages {
+    display: grid !important;
+    gap: 28px !important;
+    margin-top: 18px !important;
+  }
+  .modules-full-document .modules-pdf-page {
+    scroll-margin-top: 120px !important;
+  }
+  .modules-full-document .modules-selected-title {
+    position: sticky !important;
+    top: 84px !important;
+    z-index: 4 !important;
+    border: 1px solid rgba(255,214,100,.22) !important;
+    border-radius: 18px !important;
+    padding: 14px 16px !important;
+    margin-bottom: 14px !important;
+    background: linear-gradient(145deg, rgba(26,23,17,.96), rgba(8,7,5,.94)) !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  .modules-full-document .modules-selected-title h3 {
+    margin: 0 !important;
+    font-size: clamp(22px, 2.4vw, 38px) !important;
+  }
+  @media (max-width: 980px) {
+    .modules-full-document .modules-selected-title {
+      position: relative !important;
+      top: auto !important;
+    }
+  }
+</style>
+<style id="modules-readable-zoom-style">
+  .modules-full-document.modules-pdf-section {
+    width: min(1920px, calc(100% - 10px)) !important;
+    margin-top: 12px !important;
+  }
+  .modules-full-document .modules-pdf-head {
+    padding: 18px 22px !important;
+    border-radius: 20px !important;
+  }
+  .modules-full-document .modules-pdf-head h2 {
+    font-size: clamp(28px, 3vw, 48px) !important;
+  }
+  .modules-full-document .modules-pdf-head p:not(.eyebrow) {
+    font-size: clamp(15px, 1.2vw, 20px) !important;
+  }
+  .modules-full-document .modules-reader {
+    grid-template-columns: minmax(130px, 180px) minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+  .modules-full-document .modules-sidebar {
+    padding: 7px !important;
+    gap: 6px !important;
+    border-radius: 16px !important;
+  }
+  .modules-full-document .modules-sidebar button {
+    padding: 8px 9px !important;
+    border-radius: 12px !important;
+  }
+  .modules-full-document .modules-sidebar button span {
+    font-size: 9px !important;
+    margin-bottom: 3px !important;
+  }
+  .modules-full-document .modules-sidebar button strong {
+    font-size: 12px !important;
+    line-height: 1.12 !important;
+  }
+  .modules-full-document .modules-selected-page,
+  .modules-full-document .modules-all-pages {
+    overflow-x: auto !important;
+    padding-right: 0 !important;
+  }
+  .modules-full-document .modules-selected-title {
+    padding: 9px 12px !important;
+    margin-bottom: 10px !important;
+    border-radius: 14px !important;
+  }
+  .modules-full-document .modules-selected-title h3 {
+    font-size: clamp(18px, 1.6vw, 28px) !important;
+  }
+  .modules-full-document .modules-pdf-page {
+    width: min(100%, 1500px) !important;
+    max-width: 1500px !important;
+    padding: 6px !important;
+    border-radius: 16px !important;
+  }
+  .modules-full-document .modules-pdf-page figcaption {
+    font-size: clamp(16px, 1.5vw, 24px) !important;
+    margin: 0 0 6px !important;
+  }
+  .modules-full-document .modules-pdf-page img {
+    width: min(100%, 1480px) !important;
+    max-width: 1480px !important;
+    border-radius: 10px !important;
+  }
+  .modules-full-document .modules-pdf-pages {
+    gap: 18px !important;
+  }
+  #logic-gates-full-doc-panel.logic-gate-reference,
+  .modules-full-document .logic-gate-reference {
+    width: min(100%, 1500px) !important;
+    max-width: 1500px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  @media (min-width: 1700px) {
+    .modules-full-document .modules-reader {
+      grid-template-columns: 170px minmax(0, 1fr) !important;
+    }
+    .modules-full-document .modules-pdf-page,
+    #logic-gates-full-doc-panel.logic-gate-reference,
+    .modules-full-document .logic-gate-reference {
+      width: min(100%, 1600px) !important;
+      max-width: 1600px !important;
+    }
+    .modules-full-document .modules-pdf-page img {
+      width: min(100%, 1580px) !important;
+      max-width: 1580px !important;
+    }
+  }
+  @media (max-width: 980px) {
+    .modules-full-document .modules-reader {
+      grid-template-columns: 1fr !important;
+    }
+    .modules-full-document .modules-sidebar {
+      max-height: 230px !important;
+    }
+    .modules-full-document .modules-pdf-page,
+    .modules-full-document .modules-pdf-page img {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
+<link rel="stylesheet" href="./assets/modules-topic-enhancements.css?v=20260628a">
+<link rel="stylesheet" href="./assets/asic-flow-architecture.css?v=20260628a">
+
+<link rel="stylesheet" href="./assets/banzs-social-footer.css?v=20260628c">
+</head>
+  <body>
+    <div id="root"></div>
+
+<style id="banzs-github-safety-style">
+  body:has(#root:not(:empty)) #banzs-github-safety { display: none !important; }
+  #banzs-github-safety {
+    min-height: 100vh;
+    padding: 26px;
+    color: #fff7e8;
+    background: #050403;
+    font-family: Inter, Arial, sans-serif;
+  }
+  #banzs-github-safety * { box-sizing: border-box; }
+  .bgs-nav, .bgs-hero {
+    border: 1px solid rgba(255, 214, 100, .26);
+    background: linear-gradient(145deg, #211e17, #070604);
+    box-shadow: 0 24px 70px rgba(0,0,0,.42);
+  }
+  .bgs-nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 30px;
+    overflow-x: auto;
+  }
+  .bgs-logo {
+    display: grid;
+    place-items: center;
+    width: 68px;
+    height: 68px;
+    flex: 0 0 auto;
+    border-radius: 18px;
+    color: #090704;
+    background: linear-gradient(135deg, #ffe37a, #d99a16);
+    font-size: 34px;
+    font-weight: 1000;
+  }
+  .bgs-brand { flex: 0 0 auto; font-size: 30px; font-weight: 1000; }
+  .bgs-pill {
+    flex: 0 0 auto;
+    min-width: 120px;
+    padding: 18px 28px;
+    border-radius: 999px;
+    color: #080604;
+    background: linear-gradient(135deg, #ffe37a, #d99a16);
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+  }
+  .bgs-link { flex: 0 0 auto; color: #d9cfbf; font-size: 20px; font-weight: 900; }
+  .bgs-hero {
+    max-width: 1680px;
+    margin: 36px auto;
+    border-radius: 34px;
+    padding: clamp(36px, 6vw, 92px);
+    overflow: hidden;
+  }
+  .bgs-eyebrow {
+    color: #ffe58d;
+    letter-spacing: .34em;
+    text-transform: uppercase;
+    font-weight: 1000;
+  }
+  .bgs-hero h1 {
+    max-width: 1300px;
+    margin: 18px 0;
+    color: #fff8eb;
+    font-size: clamp(52px, 8vw, 132px);
+    line-height: .95;
+  }
+  .bgs-hero p {
+    max-width: 1100px;
+    color: #d7cdbc;
+    font-size: clamp(20px, 2vw, 31px);
+    line-height: 1.45;
+  }
+  .bgs-actions { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 34px; }
+  .bgs-actions a {
+    display: inline-grid;
+    place-items: center;
+    min-height: 62px;
+    padding: 0 30px;
+    border-radius: 999px;
+    color: #070604;
+    background: linear-gradient(135deg, #ffe37a, #f4bf31 52%, #d59116);
+    text-decoration: none;
+    font-weight: 1000;
+    font-size: 22px;
+    border: 1px solid rgba(255,255,255,.65);
+  }
+  @media (max-width: 760px) {
+    #banzs-github-safety { padding: 12px; }
+    .bgs-brand { font-size: 22px; }
+    .bgs-hero h1 { font-size: 48px; }
+  }
+</style>
+<section id="banzs-github-safety">
+  <nav class="bgs-nav">
+    <div class="bgs-logo">B</div>
+    <div class="bgs-brand">BANZS TEAM</div>
+    <div class="bgs-pill">Home</div>
+    <div class="bgs-link">ASIC Flow</div>
+    <div class="bgs-link">Modules</div>
+    <div class="bgs-link">Waveform</div>
+  </nav>
+  <main class="bgs-hero">
+    <div class="bgs-eyebrow">Backend Physical Design Workshop</div>
+    <h1>BANZS Semiconductor ASIC Flow Workshop</h1>
+    <p>A premium learning website for ASIC flow, PnR flow, STA, routing, signoff, tapeout readiness, and physical design practice.</p>
+    <div class="bgs-actions">
+      <a href="#">Open ASIC Flow</a>
+      <a href="#">Open Modules</a>
+    </div>
+  </main>
+</section>
+
+
+
+  
+
+    <script src="./ai-config.js?v=20260621f"></script>
+    <script src="./doubt-terminal.js?v=20260621f"></script>
+  
+<style id="module-circuit-diagrams-style">
+  .module-circuit-diagram { margin: 0 0 16px; padding: 18px; border: 1px solid rgba(255,214,100,.28); border-radius: 20px; background: radial-gradient(circle at 20% 0%, rgba(255,214,100,.12), transparent 34%), linear-gradient(145deg, rgba(26,23,17,.96), rgba(8,7,5,.98)); box-shadow: 0 18px 46px rgba(0,0,0,.28); }
+  .module-circuit-diagram h4 { margin: 0 0 8px; color: #ffe58d; font-size: clamp(20px, 2vw, 30px); }
+  .module-circuit-diagram p { margin: 0 0 14px; color: #d7cdbc; font-size: 16px; line-height: 1.45; }
+  .module-circuit-diagram svg { display: block; width: 100%; height: auto; max-height: 360px; border-radius: 16px; background: #060504; }
+  .module-circuit-diagram .wire { stroke: #ffd966; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .module-circuit-diagram .sig { stroke: #73e6a8; stroke-width: 4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .module-circuit-diagram .box { fill: rgba(255,255,255,.035); stroke: rgba(255,214,100,.68); stroke-width: 3; }
+  .module-circuit-diagram .gate { fill: rgba(255,217,102,.10); stroke: #ffd966; stroke-width: 4; }
+  .module-circuit-diagram text { fill: #fff7e8; font-family: Inter, Arial, sans-serif; font-weight: 800; }
+  .module-circuit-diagram .small { fill: #d7cdbc; font-size: 15px; font-weight: 700; }
+  .module-circuit-diagram .label { fill: #ffe58d; font-size: 18px; }
+  @media (max-width: 760px) { .module-circuit-diagram { padding: 12px; } .module-circuit-diagram svg { max-height: none; } }
+</style>
+<script id="module-circuit-diagrams-script">
+(function(){
+  function diagramFor(title){
+    var t=(title||'').toLowerCase();
+    if(t.includes('number systems')) return {
+      heading:'Real circuit: 4-bit register and bus representation',
+      desc:'Binary values become real wires. A 4-bit bus stores bits in flip-flops; engineers read the same bus as binary, decimal, or hex during debug.',
+      svg:`<svg viewBox="0 0 900 300" role="img" aria-label="4-bit register bus circuit">
+        <defs><marker id="arrow-gold" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ffd966"/></marker></defs>
+        <text x="30" y="38" class="label">Input bus A[3:0]</text>
+        <path class="wire" d="M55 70 H185" marker-end="url(#arrow-gold)"/><path class="wire" d="M55 115 H185" marker-end="url(#arrow-gold)"/><path class="wire" d="M55 160 H185" marker-end="url(#arrow-gold)"/><path class="wire" d="M55 205 H185" marker-end="url(#arrow-gold)"/>
+        <text x="30" y="76" class="small">A3</text><text x="30" y="121" class="small">A2</text><text x="30" y="166" class="small">A1</text><text x="30" y="211" class="small">A0</text>
+        <rect class="box" x="205" y="48" width="250" height="185" rx="18"/><text x="250" y="86" class="label">4-bit Register</text>
+        <rect class="gate" x="235" y="110" width="42" height="58" rx="8"/><rect class="gate" x="295" y="110" width="42" height="58" rx="8"/><rect class="gate" x="355" y="110" width="42" height="58" rx="8"/><rect class="gate" x="415" y="110" width="42" height="58" rx="8"/>
+        <text x="246" y="146">D</text><text x="306" y="146">D</text><text x="366" y="146">D</text><text x="426" y="146">D</text>
+        <path class="sig" d="M220 200 H445"/><text x="250" y="222" class="small">CLK captures 1010</text>
+        <path class="wire" d="M455 140 H595" marker-end="url(#arrow-gold)"/><rect class="box" x="615" y="82" width="235" height="118" rx="18"/>
+        <text x="650" y="118" class="label">Debug view</text><text x="650" y="150" class="small">Binary: 1010</text><text x="650" y="174" class="small">Decimal: 10</text><text x="650" y="198" class="small">Hex: A</text>
+      </svg>`};
+    if(t.includes('boolean') || t.includes('logic gates')) return {
+      heading:'Real circuit: CMOS logic gates used by Boolean algebra',
+      desc:'Boolean equations are implemented with real standard cells. NAND/NOR/inverter gates become transistor-level pull-up and pull-down networks in silicon.',
+      svg:`<svg viewBox="0 0 900 320" role="img" aria-label="logic gate circuit">
+        <defs><marker id="arrow-gold2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ffd966"/></marker></defs>
+        <text x="30" y="36" class="label">Y = (A · B) + C</text>
+        <text x="42" y="96" class="small">A</text><text x="42" y="146" class="small">B</text><path class="wire" d="M75 90 H165"/><path class="wire" d="M75 140 H165"/>
+        <path class="gate" d="M165 70 H220 C270 70 300 115 220 165 H165 Z"/><text x="192" y="124">AND</text><path class="wire" d="M295 117 H385" marker-end="url(#arrow-gold2)"/>
+        <text x="340" y="206" class="small">C</text><path class="wire" d="M75 205 H385"/>
+        <path class="gate" d="M385 84 C450 84 515 118 540 160 C515 202 450 236 385 236 C420 190 420 130 385 84 Z"/><text x="440" y="166">OR</text><path class="wire" d="M540 160 H650" marker-end="url(#arrow-gold2)"/><text x="670" y="166" class="label">Y</text>
+        <rect class="box" x="80" y="245" width="720" height="48" rx="14"/><text x="110" y="276" class="small">Standard-cell implementation: NAND/NOR/INV networks map Boolean logic to real silicon transistors.</text>
+      </svg>`};
+    if(t.includes('combinational')) return {
+      heading:'Real circuit: 4:1 multiplexer combinational path',
+      desc:'A mux is a common combinational block. Output changes from present inputs and select lines only; there is no stored state.',
+      svg:`<svg viewBox="0 0 900 340" role="img" aria-label="4 to 1 mux circuit">
+        <defs><marker id="arrow-gold3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ffd966"/></marker></defs>
+        <text x="34" y="38" class="label">4:1 MUX</text>
+        <path class="wire" d="M70 80 H260"/><path class="wire" d="M70 125 H260"/><path class="wire" d="M70 170 H260"/><path class="wire" d="M70 215 H260"/>
+        <text x="35" y="86" class="small">D0</text><text x="35" y="131" class="small">D1</text><text x="35" y="176" class="small">D2</text><text x="35" y="221" class="small">D3</text>
+        <path class="gate" d="M260 55 L485 105 L485 215 L260 265 Z"/><text x="330" y="160" class="label">MUX</text><text x="330" y="190" class="small">selects one data input</text>
+        <path class="wire" d="M485 160 H650" marker-end="url(#arrow-gold3)"/><text x="675" y="166" class="label">Y</text>
+        <path class="sig" d="M330 305 V260"/><path class="sig" d="M405 305 V235"/><text x="305" y="326" class="small">S1</text><text x="382" y="326" class="small">S0</text>
+        <rect class="box" x="690" y="76" width="165" height="165" rx="18"/><text x="720" y="112" class="label">Timing path</text><text x="720" y="146" class="small">input -> mux</text><text x="720" y="172" class="small">mux -> output</text><text x="720" y="198" class="small">delay affects STA</text>
+      </svg>`};
+    if(t.includes('sequential')) return {
+      heading:'Real circuit: D flip-flop sequential path',
+      desc:'Sequential logic stores state. Data launches from one flop, passes through logic, and is captured by another flop on a clock edge.',
+      svg:`<svg viewBox="0 0 900 340" role="img" aria-label="D flip flop sequential circuit">
+        <defs><marker id="arrow-gold4" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#ffd966"/></marker></defs>
+        <rect class="box" x="70" y="95" width="130" height="135" rx="16"/><text x="98" y="132" class="label">Launch</text><text x="96" y="164" class="small">DFF</text><text x="92" y="204" class="small">Q</text>
+        <path class="wire" d="M200 165 H325" marker-end="url(#arrow-gold4)"/><path class="gate" d="M325 112 H460 C515 112 545 165 460 220 H325 Z"/><text x="360" y="172">Logic</text>
+        <path class="wire" d="M540 165 H665" marker-end="url(#arrow-gold4)"/><rect class="box" x="685" y="95" width="130" height="135" rx="16"/><text x="712" y="132" class="label">Capture</text><text x="715" y="164" class="small">DFF</text><text x="713" y="204" class="small">D</text>
+        <path class="sig" d="M40 270 H835"/><path class="sig" d="M115 270 V230"/><path class="sig" d="M750 270 V230"/><text x="405" y="300" class="small">CLK edge controls launch and capture</text>
+        <text x="318" y="76" class="label">setup / hold checked here</text><path class="wire" d="M450 82 C520 58 620 78 690 112"/>
+      </svg>`};
+    return null;
+  }
+  function inject(){
+    var title=document.querySelector('.modules-selected-title h3');
+    var container=document.querySelector('.modules-selected-page');
+    if(!title||!container) return;
+    var data=diagramFor(title.textContent);
+    var old=document.querySelector('.module-circuit-diagram');
+    if(!data){ if(old) old.remove(); return; }
+    var key=data.heading;
+    if(old && old.getAttribute('data-key')===key) return;
+    if(old) old.remove();
+    var panel=document.createElement('section');
+    panel.className='module-circuit-diagram';
+    panel.setAttribute('data-key',key);
+    panel.innerHTML='<h4>'+data.heading+'</h4><p>'+data.desc+'</p>'+data.svg;
+    var page=container.querySelector('.modules-pdf-page');
+    container.insertBefore(panel,page||null);
+  }
+  var obs=new MutationObserver(function(){setTimeout(inject,30)});
+  obs.observe(document.documentElement,{childList:true,subtree:true,characterData:true});
+  window.addEventListener('load',inject);
+  setInterval(inject,1000);
+})();
+</script>
+
+  
+<style id="modules-pdf-scroll-fix">
+  .modules-reader {
+    align-items: stretch !important;
+    min-height: calc(100vh - 150px) !important;
+  }
+  .modules-sidebar {
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+  }
+  .modules-selected-page {
+    max-height: calc(100vh - 150px) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    padding-right: 8px !important;
+    scroll-behavior: smooth !important;
+  }
+  .modules-selected-page .modules-pdf-page img {
+    max-height: none !important;
+  }
+  .modules-selected-page::-webkit-scrollbar,
+  .modules-sidebar::-webkit-scrollbar {
+    width: 10px !important;
+  }
+  .modules-selected-page::-webkit-scrollbar-thumb,
+  .modules-sidebar::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ffe37a, #d59116) !important;
+    border-radius: 999px !important;
+  }
+  .modules-selected-page::-webkit-scrollbar-track,
+  .modules-sidebar::-webkit-scrollbar-track {
+    background: rgba(255,255,255,.08) !important;
+    border-radius: 999px !important;
+  }
+  @media (max-width: 980px) {
+    .modules-reader { min-height: auto !important; }
+    .modules-selected-page { max-height: none !important; overflow-y: visible !important; }
+  }
+</style>
+<script id="modules-pdf-scroll-fix-script">
+  (function(){
+    function resetSelectedScroll(){
+      var page = document.querySelector('.modules-selected-page');
+      if (page) page.scrollTop = 0;
+    }
+    document.addEventListener('click', function(event){
+      if (event.target.closest('.modules-sidebar button')) {
+        setTimeout(resetSelectedScroll, 80);
+      }
+    });
+  })();
+</script>
+
+  
+
+
+
+
+<script id="full-document-logic-gates-anchor-script">
+(function(){
+  function truthTable(rows, single){
+    var head = single ? '<tr><th>A</th><th>Y</th></tr>' : '<tr><th>A</th><th>B</th><th>Y</th></tr>';
+    return '<table>'+head+rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>';}).join('')+'</tr>';}).join('')+'</table>';
+  }
+  function add(){
+    var page=document.getElementById('module-pdf-page-5');
+    if(!page || document.getElementById('logic-gates-full-doc-panel')) return;
+    var gates=[
+      ['AND Gate','Y = A · B','Output is 1 only when both inputs are 1.',[[0,0,0],[0,1,0],[1,0,0],[1,1,1]]],
+      ['OR Gate','Y = A + B','Output is 1 when any input is 1.',[[0,0,0],[0,1,1],[1,0,1],[1,1,1]]],
+      ['NOT / Inverter','Y = A̅','Output is opposite of input.',[[0,1],[1,0]],true],
+      ['NAND Gate','Y = (A · B)̅','Inverse of AND and very common in CMOS standard cells.',[[0,0,1],[0,1,1],[1,0,1],[1,1,0]]],
+      ['NOR Gate','Y = (A + B)̅','Inverse of OR and common for compact CMOS logic.',[[0,0,1],[0,1,0],[1,0,0],[1,1,0]]],
+      ['XOR Gate','Y = A ⊕ B','Output is 1 when inputs are different.',[[0,0,0],[0,1,1],[1,0,1],[1,1,0]]],
+      ['XNOR Gate','Y = (A ⊕ B)̅','Output is 1 when inputs are same.',[[0,0,1],[0,1,0],[1,0,0],[1,1,1]]]
+    ];
+    var panel=document.createElement('section');
+    panel.id='logic-gates-full-doc-panel';
+    panel.className='logic-gate-reference';
+    panel.innerHTML='<h4>Logic gates: expression and truth table</h4><p class="gate-note">Use this quick reference with Page 5. These gates are the base of Boolean algebra, RTL expressions, synthesis mapping, and real ASIC standard cells.</p><div class="logic-gate-grid">'+gates.map(function(g){return '<article class="logic-gate-card"><h5>'+g[0]+'</h5><p class="expr">'+g[1]+'</p>'+truthTable(g[3],g[4])+'<p class="meaning">'+g[2]+'</p></article>';}).join('')+'</div>';
+    page.parentNode.insertBefore(panel,page);
+  }
+  window.addEventListener('load',add);
+  new MutationObserver(function(){setTimeout(add,50)}).observe(document.documentElement,{childList:true,subtree:true});
+  setInterval(add,1000);
+})();
+</script>
+
+<style id="modules-scroll-failure-final-fix">
+  html, body, #root {
+    overflow-y: auto !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  body {
+    overscroll-behavior-y: auto !important;
+  }
+  .modules-full-document,
+  .modules-full-document .modules-reader,
+  .modules-full-document .modules-selected-page,
+  .modules-full-document .modules-all-pages,
+  .modules-full-document .modules-pdf-pages {
+    height: auto !important;
+    max-height: none !important;
+    overflow-y: visible !important;
+    overscroll-behavior: auto !important;
+  }
+  .modules-full-document .modules-selected-page,
+  .modules-full-document .modules-all-pages {
+    overflow-x: visible !important;
+    min-height: auto !important;
+    contain: none !important;
+  }
+  .modules-full-document .modules-sidebar {
+    position: sticky !important;
+    top: 96px !important;
+    max-height: calc(100vh - 120px) !important;
+    overflow-y: auto !important;
+  }
+  .modules-full-document .modules-pdf-page {
+    scroll-margin-top: 115px !important;
+  }
+  @media (max-width: 980px) {
+    .modules-full-document .modules-sidebar {
+      position: relative !important;
+      top: auto !important;
+      max-height: 230px !important;
+    }
+  }
+</style>
+<script id="modules-scroll-failure-final-fix-script">
+(function(){
+  function unlock(){
+    document.documentElement.style.overflowY='auto';
+    document.body.style.overflowY='auto';
+    var page=document.querySelector('.modules-full-document .modules-selected-page');
+    if(page){
+      page.style.maxHeight='none';
+      page.style.overflowY='visible';
+      page.style.height='auto';
+    }
+  }
+  window.addEventListener('load', unlock);
+  window.addEventListener('scroll', unlock, {passive:true});
+  setInterval(unlock, 1000);
+})();
+</script>
+<script src="./assets/modules-topic-enhancements.js?v=20260628a"></script>
+<script src="./assets/modules-web-content.js?v=20260628a"></script>
+<script src="./assets/asic-flow-architecture.js?v=20260628a"></script>
+<script src="./assets/asic-flow-button-fix.js?v=20260628a"></script>
+
+<script src="./assets/banzs-social-footer.js?v=20260628c"></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BANZS ASIC Flow Taskbar</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #090805;
+      --panel: rgba(26, 24, 19, 0.86);
+      --panel-strong: #1f1c15;
+      --gold: #ffd966;
+      --gold-2: #d79a18;
+      --text: #fff7e6;
+      --muted: #c9bea8;
+      --line: rgba(255, 217, 102, 0.28);
+      --green: #73e6a8;
+      --danger: #ff796d;
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(255, 217, 102, 0.18), transparent 28rem),
+        radial-gradient(circle at 90% 10%, rgba(115, 230, 168, 0.08), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      padding: 28px;
+    }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 74px);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+    }
+
+    .intro {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.55;
+      margin: 20px 0 28px;
+    }
+
+    .flow-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(31, 28, 21, 0.95), rgba(10, 9, 6, 0.95));
+      border-radius: 30px;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.45);
+      overflow: hidden;
+    }
+
+    .taskbar-wrap {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 217, 102, 0.04);
+    }
+
+    .taskbar {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      padding: 4px 4px 10px;
+      scrollbar-color: var(--gold-2) rgba(255, 255, 255, 0.08);
+    }
+
+    .stage-tab {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+      color: var(--muted);
+      min-width: max-content;
+      border-radius: 999px;
+      padding: 13px 18px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      scroll-snap-align: start;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .stage-tab:hover,
+    .stage-tab:focus-visible {
+      color: var(--text);
+      border-color: rgba(255, 217, 102, 0.75);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .stage-tab.is-active {
+      color: #080703;
+      background: linear-gradient(135deg, #ffe784, var(--gold-2));
+      border-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 12px 35px rgba(215, 154, 24, 0.25);
+    }
+
+    .stage-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 22px;
+      padding: clamp(20px, 4vw, 38px);
+    }
+
+    .stage-copy h2 {
+      margin: 0 0 12px;
+      font-size: clamp(28px, 4vw, 48px);
+      letter-spacing: -0.03em;
+    }
+
+    .stage-copy p {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      margin: 0 0 18px;
+    }
+
+    .stage-meta {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .meta-box {
+      border: 1px solid rgba(255, 217, 102, 0.2);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 18px;
+      padding: 16px;
+    }
+
+    .meta-box strong {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .meta-box span {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .stage-checklist {
+      border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    .stage-checklist h3 {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 18px;
+    }
+
+    .stage-checklist ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .stage-checklist li {
+      color: var(--muted);
+      line-height: 1.45;
+      padding-left: 28px;
+      position: relative;
+    }
+
+    .stage-checklist li::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      position: absolute;
+      left: 0;
+      top: 0.42em;
+      box-shadow: 0 0 18px rgba(115, 230, 168, 0.55);
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      border: 1px solid rgba(255, 217, 102, 0.28);
+      color: var(--gold);
+      background: rgba(255, 217, 102, 0.08);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 860px) {
+      body { padding: 16px; }
+      .stage-content { grid-template-columns: 1fr; }
+      .taskbar-wrap { padding: 10px; }
+      .stage-tab { padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <p class="eyebrow">BANZS Team · Interactive ASIC Flow</p>
+    <h1>ASIC Flow Taskbar</h1>
+    <p class="intro">Click any stage to instantly switch the main content. Replace the placeholder text with your workshop data, reports, waveforms, or checklist items.</p>
+
+    <section class="flow-card" aria-label="ASIC flow stage viewer">
+      <div class="taskbar-wrap">
+        <nav class="taskbar" id="stageTabs" aria-label="ASIC flow stages"></nav>
+      </div>
+      <section class="stage-content" id="stagePanel" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <script>
+    const stages = [
+      {
+        name: 'Design',
+        title: 'RTL Design',
+        summary: 'Design converts the specification into synthesizable RTL using Verilog or SystemVerilog. This stage defines module behavior, interfaces, clocks, resets, and design intent before implementation begins.',
+        input: 'Architecture spec, interface timing, clocks, resets, feature requirements',
+        output: 'RTL files, basic testbench, lint-clean source, reset/clock intent',
+        checks: ['Review module interfaces and clock/reset behavior', 'Run lint and basic simulation', 'Confirm synthesizable coding style', 'Document assumptions and design limits'],
+        tags: ['RTL', 'Verilog', 'Spec']
+      },
+      {
+        name: 'Verification',
+        title: 'Functional Verification',
+        summary: 'Verification proves the RTL behaves according to the specification before it moves into synthesis. Testbenches, assertions, coverage, and waveform debug are used to catch functional bugs early.',
+        input: 'RTL, test plan, protocol rules, expected outputs',
+        output: 'Passing simulations, coverage data, waveform evidence, bug reports',
+        checks: ['Run directed and constrained-random tests', 'Debug waveforms for failing scenarios', 'Track functional and code coverage', 'Review assertions and corner cases'],
+        tags: ['Simulation', 'Coverage', 'Waveforms']
+      },
+      {
+        name: 'Synthesis',
+        title: 'Logic Synthesis',
+        summary: 'Synthesis maps RTL into a gate-level netlist using standard cells from the technology library. Timing constraints guide optimization for area, power, and performance.',
+        input: 'RTL, SDC constraints, Liberty libraries, target technology',
+        output: 'Gate-level netlist, synthesis reports, area/timing/power estimates',
+        checks: ['Run check_timing and unconstrained path review', 'Review area and timing QoR', 'Check inferred latches or black boxes', 'Confirm generated netlist matches intent'],
+        tags: ['Netlist', 'SDC', 'QoR']
+      },
+      {
+        name: 'Floorplan',
+        title: 'Floorplanning',
+        summary: 'Floorplanning defines die/core size, macro locations, IO placement, halos, blockages, routing channels, and early power structure. Good floorplanning reduces congestion and timing risk.',
+        input: 'Netlist, technology files, macro abstracts, IO plan, utilization target',
+        output: 'Initial DEF/floorplan, macro placement, pin plan, power outline',
+        checks: ['Check utilization and macro spacing', 'Review pin accessibility', 'Reserve routing channels and halos', 'Estimate congestion and timing path distance'],
+        tags: ['Macros', 'Pins', 'Utilization']
+      },
+      {
+        name: 'Power Plan',
+        title: 'Power Planning',
+        summary: 'Power planning creates the power delivery network using rings, straps, rails, vias, domain connections, and macro power hookups so all cells receive stable VDD and VSS.',
+        input: 'Floorplan, power intent, macro power pins, current estimates',
+        output: 'Power rings/straps/rails, PG connectivity, early IR-drop view',
+        checks: ['Run PG connectivity checks', 'Review strap pitch and via arrays', 'Check macro power connections', 'Estimate static and dynamic IR-drop risk'],
+        tags: ['PDN', 'IR Drop', 'EM']
+      },
+      {
+        name: 'Place & Route',
+        title: 'Placement and Routing',
+        summary: 'Placement positions standard cells and routing connects all nets across metal layers. This is where wire delay, congestion, slew, capacitance, and signal integrity become real.',
+        input: 'Floorplan, netlist, constraints, tech LEF, routing rules',
+        output: 'Placed and routed DEF, extracted parasitics, routing reports',
+        checks: ['Check placement legality and congestion', 'Review max transition/capacitance', 'Fix route DRC and antenna issues', 'Analyze timing with extracted parasitics'],
+        tags: ['Placement', 'Routing', 'SPEF']
+      },
+      {
+        name: 'STA',
+        title: 'Static Timing Analysis',
+        summary: 'STA verifies setup and hold timing across modes and corners without running simulation. It checks whether every timing path meets required timing constraints.',
+        input: 'Netlist, SDC, Liberty, SPEF, clocks, corners, modes',
+        output: 'Setup/hold reports, slack summaries, path groups, violations',
+        checks: ['Review report_timing and timing summary', 'Check unconstrained paths and exceptions', 'Debug negative setup/hold slack', 'Validate IO constraints and clock relationships'],
+        tags: ['Setup', 'Hold', 'Slack']
+      },
+      {
+        name: 'Signoff',
+        title: 'Physical Verification and Signoff',
+        summary: 'Signoff confirms the design is ready for tapeout by checking timing, DRC, LVS, IR/EM, signal integrity, low-power intent, and final handoff quality.',
+        input: 'Final routed database, GDS, netlist, SPEF, signoff decks',
+        output: 'Clean signoff reports, waiver list, final GDS, tapeout package',
+        checks: ['Run final STA across all corners', 'Close DRC and LVS', 'Review IR/EM and SI reports', 'Confirm ECO impact and tapeout readiness'],
+        tags: ['DRC/LVS', 'IR/EM', 'Tapeout']
+      }
+    ];
+
+    const tabs = document.getElementById('stageTabs');
+    const panel = document.getElementById('stagePanel');
+    let activeIndex = 0;
+
+    function renderTabs() {
+      tabs.innerHTML = stages.map((stage, index) => `
+        <button class="stage-tab ${index === activeIndex ? 'is-active' : ''}" type="button" data-index="${index}" aria-selected="${index === activeIndex}">
+          ${index + 1}. ${stage.name}
+        </button>
+      `).join('');
+    }
+
+    function renderPanel() {
+      const stage = stages[activeIndex];
+      panel.innerHTML = `
+        <article class="stage-copy">
+          <p class="eyebrow">Stage ${activeIndex + 1} of ${stages.length}</p>
+          <h2>${stage.title}</h2>
+          <p>${stage.summary}</p>
+          <div class="stage-meta">
+            <div class="meta-box"><strong>Typical input</strong><span>${stage.input}</span></div>
+            <div class="meta-box"><strong>Typical output</strong><span>${stage.output}</span></div>
+          </div>
+          <div class="status-row">${stage.tags.map(tag => `<span class="chip">${tag}</span>`).join('')}</div>
+        </article>
+        <aside class="stage-checklist">
+          <h3>Engineer checklist</h3>
+          <ul>${stage.checks.map(item => `<li>${item}</li>`).join('')}</ul>
+        </aside>
+      `;
+    }
+
+    function setActiveStage(index) {
+      activeIndex = index;
+      renderTabs();
+      renderPanel();
+      const activeButton = tabs.querySelector(`[data-index="${index}"]`);
+      activeButton?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+
+    tabs.addEventListener('click', (event) => {
+      const button = event.target.closest('.stage-tab');
+      if (!button) return;
+      setActiveStage(Number(button.dataset.index));
+    });
+
+    tabs.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') setActiveStage(Math.min(activeIndex + 1, stages.length - 1));
+      if (event.key === 'ArrowLeft') setActiveStage(Math.max(activeIndex - 1, 0));
+    });
+
+    renderTabs();
+    renderPanel();
+  </script>
+</body>
+</html>

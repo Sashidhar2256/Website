@@ -1,0 +1,223 @@
+
+.module-topic-enhancement{width:min(100%,1500px);margin:-4px auto 26px;padding:clamp(16px,2vw,26px);border:1px solid rgba(255,214,100,.32);border-radius:22px;background:radial-gradient(circle at 12% 0%,rgba(255,214,100,.14),transparent 34%),linear-gradient(145deg,rgba(27,24,17,.98),rgba(7,6,4,.98));box-shadow:0 18px 54px rgba(0,0,0,.34);color:#fff7e8}.module-topic-enhancement h4{margin:0 0 8px;color:#ffe58d;font-size:clamp(22px,2.2vw,36px);line-height:1.05}.module-topic-enhancement .topic-summary{margin:0 0 18px;max-width:1050px;color:#d7cdbc;font-size:clamp(15px,1.2vw,19px);line-height:1.45}.topic-enhancement-grid{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(320px,1.1fr);gap:16px;align-items:stretch}.topic-learning-card,.topic-visual-card{min-width:0;border:1px solid rgba(255,214,100,.22);border-radius:18px;background:rgba(255,255,255,.035);padding:14px}.topic-learning-card h5,.topic-visual-card h5{margin:0 0 10px;color:#ffe58d;font-size:18px}.topic-learning-card ul{margin:0;padding-left:18px}.topic-learning-card li{margin:8px 0;color:#e7ddce;line-height:1.35}.topic-equation{margin:12px 0 0;padding:12px 14px;border:1px solid rgba(117,230,167,.28);border-radius:14px;color:#75e6a7;background:rgba(0,0,0,.28);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-weight:800;overflow-x:auto}.topic-table{width:100%;border-collapse:collapse;overflow:hidden;border-radius:14px;font-size:14px}.topic-table th{background:linear-gradient(135deg,#ffe07a,#d99a16);color:#050403}.topic-table td{color:#fff7e8;background:rgba(0,0,0,.26)}.topic-table th,.topic-table td{border:1px solid rgba(255,214,100,.22);padding:8px 10px;text-align:left}.topic-visual-card svg{display:block;width:100%;height:auto;max-height:360px;border-radius:14px;background:#050403}.topic-visual-card .wire,.topic-visual-card .wave{fill:none;stroke:#ffd966;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.topic-visual-card .accent{fill:none;stroke:#75e6a7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.topic-visual-card .box{fill:rgba(255,255,255,.035);stroke:rgba(255,214,100,.72);stroke-width:3}.topic-visual-card .gate{fill:rgba(255,217,102,.11);stroke:#ffd966;stroke-width:4}.topic-visual-card text{fill:#fff7e8;font-family:Inter,Arial,sans-serif;font-weight:850}.topic-visual-card .small{fill:#d7cdbc;font-size:14px;font-weight:700}.topic-visual-card .gold{fill:#ffe58d}@media (max-width:900px){.topic-enhancement-grid{grid-template-columns:1fr}.module-topic-enhancement{padding:14px;border-radius:18px}}
+
+/* Final fit fix: prevent enhancement cards from being cut off on the right side. */
+.modules-full-document .module-topic-enhancement,
+.modules-full-document .logic-gate-reference,
+#logic-gates-full-doc-panel.logic-gate-reference {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.modules-full-document .topic-enhancement-grid,
+.modules-full-document .logic-gate-grid {
+  grid-template-columns: 1fr !important;
+  max-width: 100% !important;
+}
+
+.modules-full-document .topic-learning-card,
+.modules-full-document .topic-visual-card,
+.modules-full-document .logic-gate-card {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.modules-full-document .topic-table,
+.modules-full-document .logic-gate-card table {
+  table-layout: fixed !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.modules-full-document .topic-table th,
+.modules-full-document .topic-table td,
+.modules-full-document .logic-gate-card th,
+.modules-full-document .logic-gate-card td {
+  word-break: break-word !important;
+  white-space: normal !important;
+}
+
+.modules-full-document .modules-selected-page,
+.modules-full-document .modules-all-pages,
+.modules-full-document .modules-pdf-pages {
+  overflow-x: hidden !important;
+}
+
+/* Page 5 logic gate reference styling, CSS only. No blinking script. */
+.logic-gate-reference {
+  box-sizing: border-box;
+  margin: 0 auto 26px;
+  padding: clamp(16px, 2vw, 26px);
+  border: 1px solid rgba(255,214,100,.32);
+  border-radius: 22px;
+  background: radial-gradient(circle at 20% 0%, rgba(255,214,100,.14), transparent 36%), linear-gradient(145deg, rgba(27,24,17,.98), rgba(8,7,5,.98));
+  box-shadow: 0 20px 52px rgba(0,0,0,.30);
+  color: #fff7e8;
+}
+.logic-gate-reference h4 {
+  margin: 0 0 8px;
+  color: #ffe58d;
+  font-size: clamp(22px, 2vw, 34px);
+}
+.logic-gate-reference .gate-note {
+  margin: 0 0 18px;
+  color: #d7cdbc;
+  font-size: 16px;
+  line-height: 1.45;
+}
+.logic-gate-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.logic-gate-card {
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid rgba(255,214,100,.24);
+  border-radius: 18px;
+  background: rgba(255,255,255,.035);
+  padding: 14px;
+  overflow: hidden;
+}
+.logic-gate-card h5 {
+  margin: 0 0 8px;
+  color: #fff7e8;
+  font-size: 20px;
+}
+.logic-gate-card .expr {
+  margin: 0 0 10px;
+  color: #75e6a7;
+  font-weight: 900;
+  font-size: 16px;
+}
+.logic-gate-card table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+.logic-gate-card th {
+  background: linear-gradient(135deg,#ffe07a,#d99a16);
+  color: #050403;
+  font-weight: 900;
+}
+.logic-gate-card td {
+  color: #fff7e8;
+  background: rgba(0,0,0,.28);
+}
+.logic-gate-card th,
+.logic-gate-card td {
+  border: 1px solid rgba(255,214,100,.22);
+  padding: 7px 9px;
+  text-align: center;
+}
+.logic-gate-card .meaning {
+  margin: 10px 0 0;
+  color: #d7cdbc;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+/* Sharper, larger PDF page reading mode for Modules. */
+.modules-full-document .modules-pdf-page {
+  width: min(100%, 1680px) !important;
+  max-width: 1680px !important;
+  padding: 4px !important;
+}
+.modules-full-document .modules-pdf-page img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  image-rendering: auto !important;
+  box-shadow: 0 16px 42px rgba(0,0,0,.42) !important;
+}
+.modules-full-document .modules-pdf-page figcaption {
+  font-size: clamp(22px, 2vw, 34px) !important;
+  line-height: 1.1 !important;
+  padding: 6px 2px 10px !important;
+}
+@media (min-width: 1600px) {
+  .modules-full-document .modules-reader {
+    grid-template-columns: 150px minmax(0, 1fr) !important;
+  }
+  .modules-full-document .modules-pdf-page {
+    width: min(100%, 1760px) !important;
+    max-width: 1760px !important;
+  }
+}
+@supports selector(body:has(.modules-full-document)) {
+  body:has(.modules-full-document) .doubt-menu-button {
+    top: auto !important;
+    bottom: 18px !important;
+    right: 18px !important;
+    transform: scale(.82) !important;
+    transform-origin: right bottom !important;
+  }
+}
+
+/* Website-style module pages: keep PDF content, remove PDF screenshot/page format. */
+.modules-full-document .module-web-page {
+  box-sizing: border-box !important;
+  width: min(100%, 1480px) !important;
+  max-width: 1480px !important;
+  padding: clamp(18px, 2.2vw, 34px) !important;
+  border-radius: 24px !important;
+  background: radial-gradient(circle at 15% 0%, rgba(255,214,100,.12), transparent 34%), linear-gradient(145deg, rgba(26,23,17,.98), rgba(8,7,5,.98)) !important;
+}
+.modules-full-document .module-web-page figcaption {
+  margin: 0 0 18px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid rgba(255,214,100,.26) !important;
+  color: #ffe58d !important;
+  font-size: clamp(26px, 2.7vw, 48px) !important;
+  line-height: 1.05 !important;
+}
+.module-web-content {
+  display: grid;
+  gap: 16px;
+}
+.module-web-section {
+  border: 1px solid rgba(255,214,100,.20);
+  border-radius: 18px;
+  padding: clamp(14px, 1.5vw, 22px);
+  background: rgba(255,255,255,.035);
+}
+.module-web-section h5 {
+  margin: 0 0 10px;
+  color: #ffe58d;
+  font-size: clamp(19px, 1.5vw, 26px);
+}
+.module-web-section p,
+.module-web-section li {
+  color: #eee4d4;
+  font-size: clamp(16px, 1.2vw, 21px);
+  line-height: 1.55;
+}
+.module-web-section p {
+  margin: 0 0 8px;
+}
+.module-web-section ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.module-web-section li {
+  margin: 8px 0;
+}
+.modules-full-document .module-web-page img {
+  display: none !important;
+}
+@media (max-width: 760px) {
+  .modules-full-document .module-web-page figcaption {
+    font-size: 24px !important;
+  }
+  .module-web-section p,
+  .module-web-section li {
+    font-size: 16px;
+  }
+}
